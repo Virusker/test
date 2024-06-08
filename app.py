@@ -1,10 +1,10 @@
 from flask import Flask, request, abort
 import os
 app = Flask(__name__)
-
+ v = os.environ.get("VERCEL_URL")
 @app.route("/")
 def index():
-    v = os.environ.get("VERCEL_URL")
+   
     if v:
         return f"this var:{v}"
     else:
