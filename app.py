@@ -1,7 +1,8 @@
 from flask import Flask, request, abort
 import os
 app = Flask(__name__)
- v = os.environ.get("VERCEL_URL")
+
+v = os.environ.get('VERCEL_URL')
 @app.route("/")
 def index():
    
