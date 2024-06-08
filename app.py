@@ -1,10 +1,14 @@
 from flask import Flask, request, abort
 import os
+from dotenv import load_dotenv
 app = Flask(__name__)
+
+load_dotenv(".env")
+
 
 @app.route("/")
 def index():
-    v = os.environ.get("VERCEL_URL")
+    v = os.environ.get("A")
     if v:
         return f"this var:{v}"
     else:
