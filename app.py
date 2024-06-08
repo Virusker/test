@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 load_dotenv(".env")
 try:
-    v = os.environ.get("A")
+    v = os.environ.get("API_KEY")
     print(v)
 except:
     print(1)
