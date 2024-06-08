@@ -5,7 +5,6 @@ app = Flask(__name__)
 @app.route("/")
 def index():
     v = os.environ.get("VERCEL_URL")
-    print(v)
     if v:
         return f"this var:{v}"
     else:
