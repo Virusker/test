@@ -1,10 +1,14 @@
 from flask import Flask, request, abort
-
+import os
 app = Flask(__name__)
 
 @app.route("/")
 def index():
-    return "oktét1111ppp1"
+    v = os.environ.get('a') 
+    if v:
+        return f"this var:{v}"
+    else:
+        return "dont have anymore var"
 print()
 
 if __name__ == '__main__':
