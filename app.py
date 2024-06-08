@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-    v = os.environ["A"]
+    v = os.environ.get("A")
     print(v)
     if v:
         return f"this var:{v}"
