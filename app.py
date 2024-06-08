@@ -4,11 +4,15 @@ from dotenv import load_dotenv
 app = Flask(__name__)
 
 load_dotenv(".env")
-
+try:
+    v = os.environ.get("A")
+    print(v)
+except:
+    print(1)
 
 @app.route("/")
 def index():
-    v = os.environ.get("A")
+    
     if v:
         return f"this var:{v}"
     else:
